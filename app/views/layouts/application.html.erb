@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ExpenseTracker</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">Home</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <%= link_to 'Daily Expenses', daily_expenses_path, class: "nav-link #{active_page?(:daily_expenses)}" %>
+              </li>
+              <li class="nav-item <%= active_page?(:monthly_checklists) %>">
+                <%= link_to 'Monthly Checklists', monthly_checklists_path, class: "nav-link #{active_page?(:monthly_checklists)}" %>
+              </li>
+              <li class="nav-item <%= active_page?(:grocery_items) %>">
+                <%= link_to 'Grocery Items', grocery_items_path, class: "nav-link #{active_page?(:grocery_items)}" %>
+              </li>
+              <li class="nav-item <%= active_page?(:grocery_items) %>">
+                <%= link_to 'Monthly Items', monthly_prices_path, class: "nav-link #{active_page?(:monthly_prices)}" %>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="container mt-5 pt-4">
+      <%= yield %>
+    </div>
+  </body>
+</html>
