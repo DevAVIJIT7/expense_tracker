@@ -31,6 +31,11 @@ gem 'bootsnap', '>= 1.4.4', require: false
 # react
 gem 'react-rails'
 
+# heroku
+gem 'rails_12factor'
+gem 'rails_stdout_logging'
+gem 'rails_serve_static_assets'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
