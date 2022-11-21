@@ -12,15 +12,12 @@
 
 ActiveRecord::Schema.define(version: 2021_09_25_110334) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "daily_expenses", force: :cascade do |t|
     t.string "name", null: false
     t.decimal "amount", default: "0.0"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "monthly_checklist_id"
+    t.integer "monthly_checklist_id"
     t.index ["monthly_checklist_id"], name: "index_daily_expenses_on_monthly_checklist_id"
   end
 
@@ -45,7 +42,7 @@ ActiveRecord::Schema.define(version: 2021_09_25_110334) do
     t.integer "required_quantity", default: 0, null: false
     t.integer "quantity_bought", default: 0, null: false
     t.decimal "price", default: "0.0", null: false
-    t.bigint "grocery_item_id"
+    t.integer "grocery_item_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["grocery_item_id"], name: "index_monthly_prices_on_grocery_item_id"
