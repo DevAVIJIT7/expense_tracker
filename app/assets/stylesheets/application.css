@@ -13,3 +13,6 @@
  *= require_tree .
  *= require_self
  */
+.et-mt-6 {
+  margin-top: 4rem;
+}
